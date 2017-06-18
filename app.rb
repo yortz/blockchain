@@ -5,7 +5,10 @@ require 'sequel'
 require 'httparty'
 require 'json'
 
-DB = Sequel.connect('sqlite://database.sqlite3')
+env = ENV['RACK_ENV']
+
+
+DB = Sequel.connect("sqlite://database_#{env}.sqlite3")
 
 class Account < Sequel::Model
   plugin :json_serializer

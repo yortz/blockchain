@@ -4,7 +4,9 @@ require 'sequel'
 namespace :db do
   desc 'Bootstraps DB'
   task :bootstrap do
-   `sequel -m db/migrations sqlite://database.sqlite3`
+    ["test", "development"].each do |env|
+      `sequel -m db/migrations sqlite://database_#{env}.sqlite3`
+    end
   end
 end
 
