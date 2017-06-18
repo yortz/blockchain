@@ -10,4 +10,6 @@ gem 'httparty', '~> 0.15.5'
 group :test do
   gem 'rack-test', '~> 0.6.3'
   gem 'rspec', '~> 3.6.0'
+  gem 'factory_girl', '~> 4.8.0'
+  gem 'database_cleaner', '~> 1.6.1'
 end
