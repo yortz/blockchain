@@ -1,4 +1,4 @@
 /tmp
 .ruby-version
 .powrc
-database.sqlite3
+*.sqlite3
