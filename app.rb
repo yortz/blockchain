@@ -19,9 +19,13 @@ module Blockchain
       r.on "api" do
         r.on "v1" do
           r.is "accounts" do
+
+            # curl --request GET 'http://blockchain.dev/api/v1/accounts' --include
             r.get do
               {accounts: get_accounts}
             end
+
+            # curl --request POST "http://blockchain.dev/api/v1/accounts" --data "address=0x8eeec35015baba2890e714e052dfbe73f4b752f9"
             r.post do
               address = r.params["address"]
               response = HTTParty.get("https://etherchain.org/api/account/#{address}")
