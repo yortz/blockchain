@@ -5,7 +5,9 @@ require 'sequel'
 require 'httparty'
 require 'json'
 
+ENV['RACK_ENV'] = 'development'
 env = ENV['RACK_ENV']
+
 
 
 DB = Sequel.connect("sqlite://database_#{env}.sqlite3")
