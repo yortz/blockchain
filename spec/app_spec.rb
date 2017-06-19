@@ -10,7 +10,7 @@ describe Blockchain::App, roda: :app do
       expect(accounts).not_to be_empty
       expect(accounts.first["address"]).to eq  "0x5f862a4adfc4ef14e6c6ee1acaf4838e2a0d34ad"
       expect(accounts.first["balance"]).to eq 1989580000000000000
-      expect(accounts.first["wei"]).to eq accounts.first["balance"] * 1000000000000000000
+      expect(accounts.first["ether"]).to eq accounts.first["balance"] * 1000000000000000000
     end
   end
 

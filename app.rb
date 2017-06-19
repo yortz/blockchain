@@ -52,7 +52,7 @@ module Blockchain
     end
 
     def get_accounts
-      Account.all.map { |a| a.values.merge(wei: a[:balance] * 1000000000000000000)  }
+      Account.all.map { |a| a.values.merge(ether: a[:balance] * 1000000000000000000)  }
     end
   end
 end
